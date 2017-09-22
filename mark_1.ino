@@ -18,7 +18,7 @@ void setup(){
   pinMode(eixoZ, INPUT_PULLUP);
   Serial.begin(9600);
 }
-void  tras(){
+void  traz(){
   digitalWrite(vermelho1, HIGH); 
   digitalWrite(preto1, LOW);
   digitalWrite(vermelho2, HIGH);
@@ -82,7 +82,7 @@ void loop(){
       } else if (valorX > 600 && valorY < 600 && valorY > 400){
         frente();
         }else if (valorX< 500 && valorY < 600 && valorY > 400){
-            tras();
+            traz();
           }else if( valorX > 600 && valorY > 600 ){
             direita();  
             }else if(valorX > 600 && valorY <400){
@@ -94,8 +94,8 @@ void loop(){
                   }else if(valorX < 400 && valorY <400){
                     esquerdatraz();
                     }
-          else { 
-            parar();
-          }
+                      else { 
+                      parar();
+                    }
      
 }
