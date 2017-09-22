@@ -1,4 +1,4 @@
-// IN1 no pino 7
+ // IN1 no pino 7
 //IN2 no pino 8
 const int vermelho1 = 7;
 const int preto1 = 8;
@@ -42,17 +42,23 @@ void giroe(){
   digitalWrite(vermelho2, HIGH);
   digitalWrite(preto2, LOW);
   }
-void esquerda(){
+void direita(){
   digitalWrite(vermelho1, LOW);
   digitalWrite(preto1, HIGH);
   digitalWrite(vermelho2, LOW);
   digitalWrite(preto2, LOW);
   }
-void direita(){
+void esquerda(){
   digitalWrite(vermelho1, LOW);
   digitalWrite(preto1, LOW);
   digitalWrite(vermelho2, LOW);
   digitalWrite(preto2, HIGH);  
+  }
+void esquerdatraz(){
+  digitalWrite(vermelho1,LOW);
+  digitalWrite(preto1, LOW);
+  digitalWrite(vermelho2, HIGH);
+  digitalWrite(preto2,LOW); 
   }
 void parar(){
   digitalWrite(vermelho1, HIGH);
@@ -71,28 +77,25 @@ void loop(){
   Serial.print(", eixo Z");
   Serial.println(botao);
   
-  if (valorX > 490 && valorX < 540){
+  if (valorX > 490 && valorX < 540 && valorY < 600 && valorY > 440 ){
     parar();
-    }
-    else if (valorX > 600 && valorY<600 && valorY >400 ){
-      frente();
-      }
-      else if(valorX < 450 && valorY<600 && valorY >400 ){
-         tras();
-        }
-        else if(valorY < 400 && valorX > 499){
-          esquerda();    
+      } else if (valorX > 600 && valorY < 600 && valorY > 400){
+        frente();
+        }else if (valorX< 500 && valorY < 600 && valorY > 400){
+            tras();
+          }else if( valorX > 600 && valorY > 600 ){
+            direita();  
+            }else if(valorX > 600 && valorY <400){
+              esquerda();
+              }else if(valorX < 600 && valorX >400 && valorY < 400){
+                girod();
+                }else if(valorX < 600 && valorX > 400 && valorY > 600){
+                  giroe();
+                  }else if(valorX < 400 && valorY <400){
+                    esquerdatraz();
+                    }
+          else { 
+            parar();
           }
-          else if(valorY >600 && valorX > 499){
-            direita();
-            }
-            else if(valorY > 470 &&  valorX >400 ){
-              girod();
-              }
-              else if (valorY < 570 && valorX >400){
-                giroe();
-                }
-  //giroe();
-  
-  //girod();
+     
 }
