@@ -1,5 +1,4 @@
- // IN1 no pino 7
-//IN2 no pino 8
+
 const int vermelho1 = 7;
 const int preto1 = 8;
 const int vermelho2 = 5;
@@ -79,23 +78,22 @@ void loop(){
   
   if (valorX > 490 && valorX < 540 && valorY < 600 && valorY > 440 ){
     parar();
-      } else if (valorX > 600 && valorY < 600 && valorY > 400){
-        frente();
-        }else if (valorX< 500 && valorY < 600 && valorY > 400){
-            traz();
-          }else if( valorX > 600 && valorY > 600 ){
-            direita();  
-            }else if(valorX > 600 && valorY <400){
-              esquerda();
-              }else if(valorX < 600 && valorX >400 && valorY < 400){
-                girod();
-                }else if(valorX < 600 && valorX > 400 && valorY > 600){
-                  giroe();
-                  }else if(valorX < 400 && valorY <400){
-                    esquerdatraz();
-                    }
-                      else { 
-                      parar();
-                    }
+  }else if (valorX > 600 && valorY < 600 && valorY > 400){
+    frente();
+  }else if (valorX< 500 && valorY < 600 && valorY > 400){
+    traz();
+  }else if( valorX > 600 && valorY > 600 ){
+    direita();  
+  }else if(valorX > 600 && valorY <400){
+    esquerda();
+  }else if(valorX < 600 && valorX >400 && valorY < 400){
+    girod();
+  }else if(valorX < 600 && valorX > 400 && valorY > 600){
+    giroe();
+  }else if(valorX < 400 && valorY <400){
+    esquerdatraz();
+  }else { 
+    parar();
+  }
      
 }
