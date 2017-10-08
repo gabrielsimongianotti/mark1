@@ -18,53 +18,59 @@ void setup(){
   Serial.begin(9600);
 }
 void  traz(){
-  digitalWrite(vermelho1, HIGH); 
+ 	digitalWrite(vermelho1, HIGH); 
   digitalWrite(preto1, LOW);
   digitalWrite(vermelho2, HIGH);
   digitalWrite(preto2, LOW);
-  }
+}
 void frente(){
   digitalWrite(vermelho1, LOW);
   digitalWrite(preto1, HIGH);
   digitalWrite(vermelho2, LOW);
   digitalWrite(preto2, HIGH);
-  }
-void girod(){
+}
+void girod()
   digitalWrite(vermelho1, HIGH);
   digitalWrite(preto1, LOW);
   digitalWrite(vermelho2, LOW);
   digitalWrite(preto2, HIGH);
-  }
+}
 void giroe(){
   digitalWrite(vermelho1, LOW);
   digitalWrite(preto1, HIGH);
   digitalWrite(vermelho2, HIGH);
   digitalWrite(preto2, LOW);
-  }
+}
 void direita(){
   digitalWrite(vermelho1, LOW);
   digitalWrite(preto1, HIGH);
   digitalWrite(vermelho2, LOW);
   digitalWrite(preto2, LOW);
-  }
+t}
 void esquerda(){
   digitalWrite(vermelho1, LOW);
   digitalWrite(preto1, LOW);
   digitalWrite(vermelho2, LOW);
   digitalWrite(preto2, HIGH);  
-  }
+}
 void esquerdatraz(){
   digitalWrite(vermelho1,LOW);
   digitalWrite(preto1, LOW);
   digitalWrite(vermelho2, HIGH);
   digitalWrite(preto2,LOW); 
-  }
+}
+void direitatraz(){
+	digitalWrite(vermelho1, HIGH);
+	digitalWrite(preto1, LOW);
+	digitalWrite(vermelho2, LOW);
+	digitalWrite(preto2, LOW);
+}
 void parar(){
   digitalWrite(vermelho1, HIGH);
   digitalWrite(preto1, HIGH);
   digitalWrite(vermelho2, HIGH);
   digitalWrite(preto2, HIGH);  
-  }
+}
 void loop(){
   int valorX = analogRead(eixoX);
   int valorY = analogRead(eixoY);
@@ -90,9 +96,12 @@ void loop(){
     girod();
   }else if(valorX < 600 && valorX > 400 && valorY > 600){
     giroe();
-  }else if(valorX < 400 && valorY <400){
+  }else if(valorX < 400 && valorY < 400){
     esquerdatraz();
-  }else { 
+  }else if(valorX < 400 && valorY > 600){
+		direitatraz();
+	}
+	else { 
     parar();
   }
      
