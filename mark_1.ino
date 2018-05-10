@@ -3,6 +3,7 @@ const int vermelho1 = 7;
 const int preto1 = 8;
 const int vermelho2 = 5;
 const int preto2 = 6;
+//teste
 #define eixoX A1
 #define eixoY A0
 #define eixoZ 9
